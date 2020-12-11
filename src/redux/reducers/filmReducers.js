@@ -1,8 +1,10 @@
-import {LIST_FILM, LIST_PEOPLE} from '../actions/filmsAction'
+import {LIST_FILM, LIST_PEOPLE, PEOPLE, INDEX} from '../actions/filmsAction'
 
 const initialState = {
     listFilm: [],
-    listPeople: []
+    listPeople: [],
+    people: [],
+    index: ''
 }
 
 const filmReducer = (state = initialState, action) => {
@@ -16,6 +18,16 @@ const filmReducer = (state = initialState, action) => {
             return {
                 ...state,
                 listPeople: action.payload
+            }
+        case PEOPLE:
+            return {
+                ...state,
+                people: action.payload
+            }
+        case INDEX:
+            return {
+                ...state,
+                index: action.payload
             }
         default:
             return state
